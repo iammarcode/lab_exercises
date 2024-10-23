@@ -18,7 +18,7 @@
             password: True
 
         MDTextField:
-            id: txt_re_password
+            id: txt_re_enter_password
             hint_text: 'Re-enter Password'
             password: True
 
@@ -27,12 +27,16 @@
             hint_text: 'Phone number'
             password: True    
 
-        MDIconButton:
-            icon: 'fingerprint'
-            on_press: root.button_click()
+        MDRaisedButton:
+            text: 'Clear'
+            on_press: root.clear()
         
-        MDIconButton:
-            icon: 'delete-off'
-            on_press: root.delete()
+        MDRaisedButton:
+            text: 'Register'
+            on_press: root.register()
+
+        MDRaisedButton:
+            text: 'Cancel'
+            on_press: root.cancel()
         
         Widget: ### fill the empty space of BoxLayout

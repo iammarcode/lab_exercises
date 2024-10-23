@@ -16,7 +16,7 @@ from InputScreen import InputScreen
 
 ### Set window size if the app runs on Windows or MacOS
 if platform in ('win', 'macosx'):
-    Window.size = (400, 400)
+    Window.size = (400, 600)
 
 class MyApp(MDApp):
 
@@ -33,6 +33,6 @@ class MyApp(MDApp):
 ### appData is a global name defined in Global.py
 ### Now appData.app refers to the app
 ### We can add anything to appData and get them back in different py files
-appData.topic = 'Input Example'
+appData.topic = 'Lab3 execises: '
 appData.app = MyApp()
 appData.app.run()
