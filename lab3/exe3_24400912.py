@@ -24,7 +24,7 @@ class InputScreen(Screen):
 
         if any(not field.strip() for field in [fullname, email, password, reenterPassword, phone]):
             self.show_dialog("One or more fields are empty.")
-        if password != reenterPassword:
+        elif password != reenterPassword:
             self.show_dialog("The Password and re-enter password are different")
     
         print(f'You inputted: {fullname}/{email}/{password}/{reenterPassword}/{phone}.')
