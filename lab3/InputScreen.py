@@ -2,13 +2,11 @@ from kivy.uix.screenmanager import Screen
 
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDRaisedButton
-
-'''
-To access the global values, you can simply import appData from Global.
-- add or replace a global value: appData.abc = 123
-- get an existing global value: v = appData.abc
-'''
-from Global import appData
+from kivy.core.window import Window
+from kivy.utils import platform
+from kivy.uix.screenmanager import ScreenManager
+from kivymd.app import MDApp
+from kivy.app import Builder
 
 class InputScreen(Screen):
     def clear(self):
@@ -49,3 +47,22 @@ class InputScreen(Screen):
             ]
         )
         dialog.open()
+
+
+if platform in ('win', 'macosx'):
+    Window.size = (400, 400)
+
+class MyApp(MDApp):
+    screenmanager = None
+
+    ### The app starts with a screen. The screen defination is loaded from the KV file
+    def build(self):
+        self.title = 'Lab3'
+        Builder.load_file('InputScreen.kv')
+
+        self.screenmanager = ScreenManager()
+        self.screenmanager.add_widget(InputScreen(name='InputScreen'))
+
+        return self.screenmanager
+
+MyApp().run()
