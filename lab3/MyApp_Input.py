@@ -16,7 +16,7 @@ from InputScreen import InputScreen
 
 ### Set window size if the app runs on Windows or MacOS
 if platform in ('win', 'macosx'):
-    Window.size = (400, 600)
+    Window.size = (400, 400)
 
 class MyApp(MDApp):
 

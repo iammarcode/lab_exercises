@@ -18,7 +18,7 @@
             password: True
 
         MDTextField:
-            id: txt_re_enter_password
+            id: txt_reenter_password
             hint_text: 'Re-enter Password'
             password: True
 
@@ -27,16 +27,21 @@
             hint_text: 'Phone number'
             password: True    
 
-        MDRaisedButton:
-            text: 'Clear'
-            on_press: root.clear()
-        
-        MDRaisedButton:
-            text: 'Register'
-            on_press: root.register()
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: dp(48)  # Set a fixed height for the button bar
 
-        MDRaisedButton:
-            text: 'Cancel'
-            on_press: root.cancel()
+            MDRaisedButton:
+                text: 'Clear'
+                on_press: root.clear()
+
+            MDRaisedButton:
+                text: 'Register'
+                on_press: root.register()
+
+            MDRaisedButton:
+                text: 'Cancel'
+                on_press: root.cancel()
         
         Widget: ### fill the empty space of BoxLayout
