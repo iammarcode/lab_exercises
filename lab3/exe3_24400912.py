@@ -1,12 +1,11 @@
-from kivy.uix.screenmanager import Screen
-
-from kivymd.uix.dialog import MDDialog
-from kivymd.uix.button import MDRaisedButton
+from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.core.window import Window
 from kivy.utils import platform
-from kivy.uix.screenmanager import ScreenManager
-from kivymd.app import MDApp
 from kivy.app import Builder
+
+from kivymd.app import MDApp
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.button import MDRaisedButton
 
 class InputScreen(Screen):
     def clear(self):
@@ -55,9 +54,8 @@ if platform in ('win', 'macosx'):
 class MyApp(MDApp):
     screenmanager = None
 
-    ### The app starts with a screen. The screen defination is loaded from the KV file
     def build(self):
-        self.title = 'Lab3'
+        self.title = 'Lab3 exercise'
         Builder.load_file('exe3_24400912.kv')
 
         self.screenmanager = ScreenManager()
