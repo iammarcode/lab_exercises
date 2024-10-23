@@ -58,7 +58,7 @@ class MyApp(MDApp):
     ### The app starts with a screen. The screen defination is loaded from the KV file
     def build(self):
         self.title = 'Lab3'
-        Builder.load_file('InputScreen.kv')
+        Builder.load_file('exe3_24400912.kv')
 
         self.screenmanager = ScreenManager()
         self.screenmanager.add_widget(InputScreen(name='InputScreen'))
