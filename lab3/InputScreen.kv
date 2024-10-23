@@ -1,0 +1,38 @@
+<InputScreen>:
+    
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(20)
+
+        MDTextField:
+            id: txt_fullname
+            hint_text: 'Full name'        
+
+        MDTextField:
+            id: txt_email
+            hint_text: 'Email address'
+
+        MDTextField:
+            id: txt_password
+            hint_text: 'Password'
+            password: True
+
+        MDTextField:
+            id: txt_re_password
+            hint_text: 'Re-enter Password'
+            password: True
+
+        MDTextField:
+            id: txt_phone_number
+            hint_text: 'Phone number'
+            password: True    
+
+        MDIconButton:
+            icon: 'fingerprint'
+            on_press: root.button_click()
+        
+        MDIconButton:
+            icon: 'delete-off'
+            on_press: root.delete()
+        
+        Widget: ### fill the empty space of BoxLayout
