@@ -4,11 +4,11 @@ from kivy.uix.screenmanager import Screen, ScreenManager
 
 from kivymd.app import MDApp
 from kivy.app import Builder
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.button import MDRaisedButton
 
 
 class InputScreen(Screen):
-    dialog = None
-
     def clear(self):
         # Clear all text fields
         self.ids.txt_fullname.text = ''
@@ -26,11 +26,11 @@ class InputScreen(Screen):
 
         # Validate input
         if not all([fullname, email, password, repassword, phone]):
-            self.show_dialog("Error", "All fields must be filled out.")
+            self.show_dialog("All fields must be filled out.")
             return
         
         if password != repassword:
-            self.show_dialog("Error", "Passwords do not match.")
+            self.show_dialog("Passwords do not match.")
             return
 
         # Print the values to the terminal
@@ -45,16 +45,30 @@ class InputScreen(Screen):
         self.clear()
 
 
+    def show_dialog(self, text):
+        dialog = MDDialog(
+            title = 'Dialog',
+            text = text,
+            buttons = [
+                MDRaisedButton(
+                    text = 'Close',
+                    on_press = lambda x: dialog.dismiss()
+                ),
+            ]
+        )
+        dialog.open()
+
+
 
 if platform in ('win', 'macosx'):
-    Window.size = (400, 400)
+    Window.size = (400, 500)
 
 class MyApp(MDApp):
     screenmanager = None
 
     def build(self):
         self.title = 'Lab3 exercise'
-        Builder.load_file('exe3_24400912.kv')
+        Builder.load_file('exe3_24462780.kv')
 
         self.screenmanager = ScreenManager()
         self.screenmanager.add_widget(InputScreen(name='InputScreen'))
