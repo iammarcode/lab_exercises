@@ -1,0 +1,42 @@
+<InputScreen>:
+    
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(20)
+
+        MDTextField:
+            id: txt_fullname
+            hint_text: 'Full name'  
+
+        MDTextField:
+            id: txt_emailaddress
+            hint_text: 'Email address'
+
+        MDTextField:
+            id: txt_password
+            hint_text: 'Password'
+            password: True
+
+        MDTextField:
+            id: txt_repassword
+            hint_text: 'Re-enter Password'
+            password: True
+
+        MDTextField:
+            id: txt_phonenumber
+            hint_text: 'Phone number'
+        
+        MDRectangleFlatButton:
+            text: 'Register'
+            on_press: root.register()
+
+        MDRectangleFlatButton:
+            text: 'Clear'
+            on_press: root.clear()
+
+        MDRectangleFlatButton:
+            text: 'Cancel'
+            on_press: root.cancel()
+        
+
+
