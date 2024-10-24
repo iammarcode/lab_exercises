@@ -1,7 +1,10 @@
-from kivy.uix.screenmanager import Screen
-from kivymd.uix.dialog import MDDialog
-from Global import appData
-from kivymd.uix.button import MDRaisedButton
+from kivy.utils import platform
+from kivy.core.window import Window
+from kivy.uix.screenmanager import Screen, ScreenManager
+
+from kivymd.app import MDApp
+from kivy.app import Builder
+
 
 class InputScreen(Screen):
     dialog = None
@@ -40,3 +43,22 @@ class InputScreen(Screen):
         # Print "CANCEL" and clear all text fields
         print("CANCEL")
         self.clear()
+
+
+
+if platform in ('win', 'macosx'):
+    Window.size = (400, 400)
+
+class MyApp(MDApp):
+    screenmanager = None
+
+    def build(self):
+        self.title = 'Lab3 exercise'
+        Builder.load_file('exe3_24400912.kv')
+
+        self.screenmanager = ScreenManager()
+        self.screenmanager.add_widget(InputScreen(name='InputScreen'))
+
+        return self.screenmanager
+
+MyApp().run()
