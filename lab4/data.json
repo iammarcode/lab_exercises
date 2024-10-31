@@ -19,11 +19,8 @@
       "steps": ["Boil pasta", "Cook beef", "Mix sauce"],
       "cookTime": "30 minutes",
       "author": "userID1",
-      "ratings": [
-        {"userID": "userID2", "score": 5}
-      ],
       "comments": [
-        {"userID": "userID2", "text": "Loved this recipe!", "timestamp": 1633023000}
+        {"userID": "userID2", "text": "Loved this recipe!", "timestamp": 1633023000, "ratings": 5}
       ]
     },
     "recipeID2": {
@@ -33,8 +30,10 @@
       "steps": ["Cook chicken", "Add spices", "Simmer with coconut milk"],
       "cookTime": "45 minutes",
       "author": "userID1",
-      "ratings": [],
-      "comments": []
+      "comments": [
+        {"userID": "userID1", "text": "Not that good!", "timestamp": 1633023900, "ratings": 3},
+        {"userID": "userID2", "text": "So good!", "timestamp": 1633323900, "ratings": 4}
+      ]
     }
   },
   "categories": {
