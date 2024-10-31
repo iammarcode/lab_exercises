@@ -1,0 +1,50 @@
+{
+  "users": {
+    "userID1": {
+      "username": "JohnDoe",
+      "email": "john@example.com",
+      "favorites": ["recipeID1", "recipeID2"]
+    },
+    "userID2": {
+      "username": "JaneDoe",
+      "email": "jane@example.com",
+      "favorites": ["recipeID3"]
+    }
+  },
+  "recipes": {
+    "recipeID1": {
+      "title": "Spaghetti Bolognese",
+      "description": "A classic Italian pasta dish",
+      "ingredients": ["Spaghetti", "Tomato Sauce", "Ground Beef"],
+      "steps": ["Boil pasta", "Cook beef", "Mix sauce"],
+      "cookTime": "30 minutes",
+      "author": "userID1",
+      "ratings": [
+        {"userID": "userID2", "score": 5}
+      ],
+      "comments": [
+        {"userID": "userID2", "text": "Loved this recipe!", "timestamp": 1633023000}
+      ]
+    },
+    "recipeID2": {
+      "title": "Chicken Curry",
+      "description": "A spicy and flavorful dish",
+      "ingredients": ["Chicken", "Curry Powder", "Coconut Milk"],
+      "steps": ["Cook chicken", "Add spices", "Simmer with coconut milk"],
+      "cookTime": "45 minutes",
+      "author": "userID1",
+      "ratings": [],
+      "comments": []
+    }
+  },
+  "categories": {
+    "categoryID1": {
+      "name": "Quick & Easy",
+      "recipes": ["recipeID1"]
+    },
+    "categoryID2": {
+      "name": "Low-Calorie",
+      "recipes": ["recipeID2"]
+    }
+  }
+}
